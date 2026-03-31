@@ -1,0 +1,82 @@
+PyProlog Project Report
+
+Title: PyProlog – Python + Prolog Integration Tool
+
+
+1. Abstract
+
+PyProlog is a lightweight, single-file Python application that integrates Python with Prolog using the pyswip library. It provides a user-friendly Command Line Interface (CLI) to load a Prolog knowledge base, run logical queries, and dynamically add new facts.
+The project uses a family relationship knowledge base as an example to demonstrate the power of logic programming combined with Python scripting. It features rich terminal output using the rich library.
+
+2. Objectives
+
+Integrate Prolog with Python seamlessly
+Create an easy-to-use CLI for querying and managing a knowledge base
+Demonstrate family relationship inference (father, mother, grandparent, sibling)
+Enable dynamic addition of facts at runtime
+Provide a simple educational tool for Logic Programming and AI
+
+3. Features
+
+Embedded family relations knowledge base
+Support for custom Prolog queries
+Predefined commands for common family queries
+Dynamic fact assertion (assertz)
+Beautiful formatted output with tables and colors
+Safe temporary file handling for Prolog code
+
+4. Technologies Used
+
+Python 3
+pyswip (Python-Prolog bridge)
+SWI-Prolog (Prolog engine)
+Typer (CLI framework)
+Rich (terminal styling and tables)
+
+Installation:
+Bashpip install pyswip typer rich
+
+
+5. System Design
+The application consists of:
+
+A Prolog knowledge base (facts + rules) stored as a string
+PyProlog class for managing queries and assertions
+Typer-based CLI with commands like q, father, mother, grandparents, siblings, add, and facts
+
+Prolog code is written to a temporary file and consulted at startup.
+
+
+6. Sample Usage
+
+Bashpython pyprolog.py q "father(X, mary)"
+python pyprolog.py father mary
+python pyprolog.py grandparents lucas
+python pyprolog.py siblings sophia
+python pyprolog.py add "parent(alice, dave)"
+
+
+7. Results & Testing
+
+All predefined queries return correct results
+Dynamic facts are successfully added and reflected in queries
+Clean error handling for invalid inputs
+Rich tables improve readability of query results
+
+8. Limitations & Future Work
+Limitations:
+
+Knowledge base is not persistent
+Requires SWI-Prolog installed on system
+
+Future Enhancements:
+
+Persistent knowledge base save/load
+Web interface (FastAPI/Streamlit)
+Advanced family rules (uncle, aunt, cousin)
+Support for other domains (diagnosis, scheduling)
+
+9. Conclusion
+
+PyProlog successfully demonstrates hybrid programming by combining Prolog’s logical inference with Python’s flexibility. It serves as an excellent educational tool for students and developers interested in Artificial Intelligence and Logic Programming.
+The single-file design makes it simple, portable, and easy to extend.
